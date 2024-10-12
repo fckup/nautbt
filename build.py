@@ -55,6 +55,9 @@ if platform.system() == "Linux":
     os.environ["CC"] = "clang"
     os.environ["LDSHARED"] = "clang -shared"
 
+if platform.system() == "Darwin" and platform.machine() == "arm64":
+    os.environ["CFLAGS"] = "-arch arm64"
+    os.environ["LDFLAGS"] = "-arch arm64 -w"
 
 if platform.system() == "Windows":
     # Linker error 1181
