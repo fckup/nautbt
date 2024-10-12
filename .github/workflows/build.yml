@@ -297,7 +297,6 @@ jobs:
       - name: Set up Rust toolchain
         run: |
           rustup toolchain add --profile minimal stable --component clippy,rustfmt
-          rustup target add aarch64-apple-darwin
 
       - name: Set up Python environment
         uses: actions/setup-python@v5
